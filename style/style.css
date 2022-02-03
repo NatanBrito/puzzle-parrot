@@ -18,6 +18,7 @@ margin: 34px;
 display: flex;
 justify-content: center;
 align-items: center;
+box-shadow: 0 0 0.35em rgb(95, 95, 95);
 
 }
 nav{
@@ -25,7 +26,6 @@ display: flex;
 justify-content: center;
 display:flex;
 flex-wrap: wrap;
-background-color: #bdba20;
 }
 .card img{
     width:100px;
