@@ -1,4 +1,5 @@
 let numCards;
+let makerCards;
 let versoImg=
 ["<img class='gif disappears' src='imagens/bobrossparrot.gif' alt='papagaio de chapéu'",
 "<img class='gif disappears' src='imagens/explodyparrot.gif' alt='papagaio indo pro lado'",
@@ -19,14 +20,14 @@ let versoImg=
     numCards = parseInt(prompt("Qual o número de cartas? Somente número par entre 4 a 14"));
 }
 // pra gerar a carta
-const navegador= document.querySelector("nav")
+ makerCards= document.querySelector("nav")
 for(let i=0; i<numCards;i++){
   const cardHtml=`   <div class="card " onclick="" > 
   <img src="./imagens/parrot.png"/>
   <ul>
   </ul>
 </div>`
-navegador.innerHTML += cardHtml
+makerCards.innerHTML += cardHtml
 }
 
 

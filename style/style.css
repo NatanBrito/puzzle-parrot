@@ -10,8 +10,9 @@ text-align: center;
 margin: 40px 40px;
 
 }
+/* tentando fazer a virada de carta*/
 .card{
-    /*transform: rotateY(90deg);*/
+    transform: rotateY(deg);
 cursor: pointer;
 transition: all .5s;
 transform-style: preserve-3d;
