@@ -11,9 +11,8 @@ margin: 40px 40px;
 
 }
 /* tentando fazer a virada de carta*/
-.card{
-    transform: rotateY(deg);
-cursor: pointer;
+.turnCard{
+    transform: rotateY(95deg);
 transition: all .5s;
 transform-style: preserve-3d;
 }
@@ -28,6 +27,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 box-shadow: 0 0 0.35em rgb(95, 95, 95);
+cursor: pointer;
+
 
 
 }
@@ -42,3 +43,6 @@ flex-wrap: wrap;
     height:100px;
  
 }   
+.testeSeCaiAqui{
+display:none;
+}

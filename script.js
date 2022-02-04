@@ -22,23 +22,15 @@ let versoImg=
 // pra gerar a carta
  makerCards= document.querySelector("nav")
 for(let i=0; i<numCards;i++){
-  const cardHtml=`   <div class="card " onclick="" > 
+  const cardHtml=`   <div class="card " onclick=" turnCard(this);" > 
   <img src="./imagens/parrot.png"/>
-  <ul>
-  </ul>
+  
 </div>`
 makerCards.innerHTML += cardHtml
 }
-
-
-
-
-
-
-
-function turnCard(){
-  const test = document.querySelector(ul)
-  text.inner.html= '<li>${versoImg[0]}</li>'
-
+// tentando fazer funcionar, girando só a primeira
+function turnCard(chamandoCarta){
+  const test = document.querySelector(".card")
+ test.classList.toggle("turnCard")
 }
 
