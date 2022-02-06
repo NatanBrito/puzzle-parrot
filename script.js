@@ -9,28 +9,27 @@ let versoImg=
 "<img class='gif disappears' src='imagens/tripletsparrot.gif' alt=' 3 papagaio dançando'",
 "<img class='gif disappears' src='imagens/unicornparrot.gif' alt='papagaio unicórnio'",
 ];
-
-
-//versoImg.sort(comparador);
-//function comparador() { 
-//	return Math.random() - 0.5; 
-//}
+//embaralha as cartas
+versoImg.sort(comparador);
+function comparador() { 
+	return Math.random() - 0.5;
+}
 
   while (numCards % 2 != 0 || numCards > 14 || numCards < 4) {
     numCards = parseInt(prompt("Qual o número de cartas? Somente número par entre 4 a 14"));
 }
 // pra gerar a carta
- makerCards= document.querySelector("nav")
+makerCards= document.querySelector("nav")
 for(let i=0; i<numCards;i++){
-  const cardHtml=`   <div class="card " onclick=" turnCard(this);" > 
+  const frontCardHtml=`   <div class="card " onclick=" turnCard(this);" > 
   <img src="./imagens/parrot.png"/>
   
 </div>`
-makerCards.innerHTML += cardHtml
+makerCards.innerHTML += frontCardHtml
 }
-// tentando fazer funcionar, girando só a primeira
+// tentando fazer funcionar, girando só a primeira,
 function turnCard(chamandoCarta){
-  const test = document.querySelector(".card")
- test.classList.toggle("turnCard")
+const test = document.querySelector(".card")
+test.classList.toggle("turnCard")
 }
 
