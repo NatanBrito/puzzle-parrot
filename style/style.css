@@ -1,47 +1,71 @@
-*{box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EEF9BF;
+}
 
 
-header p{
-font-family: 'Roboto', sans-serif;
-font-weight:700;
-font-size:56px;
-color:#75B79E;
-text-align: center;
-margin: 40px 40px;
+header p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    color: #75B79E;
+    text-align: center;
+    margin: 40px 40px;
 
 }
+
 /* tentando fazer a virada de carta*/
-.turnCard{
+.turnCard {
     transform: rotateY(95deg);
-transition: all .5s;
-transform-style: preserve-3d;
+    transition: all .5s;
+    transform-style: preserve-3d;
 }
 
-.card{
-width:117px;
-height:147px;
-border-radius: 5px;
-background-color: #A7E9AF;
-margin: 34px;
-display: flex;
-justify-content: center;
-align-items: center;
-box-shadow: 0 0 0.35em rgb(95, 95, 95);
-cursor: pointer;
+.card {
+    width: 117px;
+    height: 147px;
+    border-radius: 5px;
+    background-color: #A7E9AF;
+    margin: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 0.35em rgb(95, 95, 95);
+    cursor: pointer;
 
 
 
 }
-nav{
-display: flex;
-justify-content: center;
-display:flex;
-flex-wrap: wrap;
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-.card img{
-width:100px;
-height:100px;
-}   
-.testeSeCaiAqui{
-display:none;
+
+.card img {
+    width: 100px;
+    height: 100px;
+}
+
+.testeSeCaiAqui {
+    display: none;
+}
+
+.disappears {
+    display: none;
+}
+
+@media(max-width:520px) {
+    nav {
+        display: grid;
+    }
+
+    header p {
+        font-size: 36px;
+        margin: 0px 100px;
+    }
 }
