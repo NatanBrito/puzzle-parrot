@@ -19,9 +19,9 @@ header p {
 
 /* tentando fazer a virada de carta*/
 .turnCard {
-    transform: rotateY(95deg);
+    transform: rotateY(180deg);
     transition: all .5s;
-    transform-style: preserve-3d;
+    transform: rotateY(180deg);
 }
 
 .card {
@@ -35,9 +35,13 @@ header p {
     align-items: center;
     box-shadow: 0 0 0.35em rgb(95, 95, 95);
     cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
 
+}
 
-
+.card:active {
+    transform: scale(0.97);
 }
 
 nav {
@@ -51,13 +55,20 @@ nav {
     height: 100px;
 }
 
-.testeSeCaiAqui {
-    display: none;
-}
 
 .disappears {
     display: none;
 }
+
+.backFace, .frontFace {
+    position: absolute;
+}
+
+.backFace {
+    transform: rotateY(180deg);
+}
+
+.frontFace {}
 
 @media(max-width:520px) {
     nav {
