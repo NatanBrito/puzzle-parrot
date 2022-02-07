@@ -6,7 +6,6 @@ body {
     background-color: #EEF9BF;
 }
 
-
 header p {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -14,15 +13,14 @@ header p {
     color: #75B79E;
     text-align: center;
     margin: 40px 40px;
-
 }
 
-/* tentando fazer a virada de carta*/
 .turnCard {
     transition: all .5s;
     transform: rotateY(180deg);
 }
-.turnCard2{
+
+.turnCard2 {
     transition: all .5s;
     transform: rotateY(180deg);
 }
@@ -40,8 +38,6 @@ header p {
     cursor: pointer;
     position: relative;
     transform-style: preserve-3d;
-    
-
 }
 
 .card:active {
@@ -51,7 +47,6 @@ header p {
 .frontFace {
     position: absolute;
     transform: rotateY(180deg);
-
 }
 
 .backFace {
@@ -70,13 +65,11 @@ nav {
     backface-visibility: hidden;
 }
 
-
 .disappears {
     display: none;
 }
 
-
-@media(max-width:520px) {
+@media(max-width:534px) {
     nav {
         display: grid;
     }
