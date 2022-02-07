@@ -70,7 +70,8 @@ function compararCartas(){
       primeiraCarta.classList.remove('turnCard');
       segundaCarta.classList.remove('segundaCarta');
       segundaCarta.classList.remove('turnCard');
-      primeiraCarta.setAttribute('onclick','virarCarta(this)');
+      primeiraCarta.setAttribute('onclick','turnCardAll(this)');
+      segundaCarta.setAttribute('onclick','turnCardAll(this)');
   }
   else{
       primeiraCarta.classList.remove('primeiraCarta');
