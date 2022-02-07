@@ -1,5 +1,4 @@
-let thisAntes = [];
-let thisAtual = [];
+let contadorJogadas=0;
 let primeiraCarta ;
 let segundaCarta  ;
 let numCards;
@@ -29,7 +28,7 @@ while (numCards % 2 != 0 || numCards > 14 || numCards < 4) {
 // pra gerar a carta
 makerCards = document.querySelector("nav")
 for (let i = 0; i < (numCards / 2); i++) {
-  const frontCardHtml = `   <div data-identifier="card" class="card "  onclick=" turnCard(this);" > 
+  const frontCardHtml = `   <div data-identifier="card" class="card "  onclick=" turnCardAll(this);" > 
    
   <img data-identifier="back-face" class="backFace" src="./imagens/parrot.png"/>
   <div data-identifier="front-face" class="frontFace">
@@ -44,24 +43,22 @@ for (let i = 0; i < cartasCriadas.length; i++) {
   makerCards.innerHTML += cartasCriadas[i];
 }
 const test = document.querySelectorAll(".card")
-test.forEach(card => card.addEventListener('click', turnCard))
+test.forEach(card => card.addEventListener('click', turnCardAll))
 // faz a carta virar e tentando fazer o confirmador de cartas iguais
-function turnCard() {
-this.classList.add("turnCard")
 
-}
 
-function turnCard(diviSelecionada){
-  diviSelecionada.classList.add('turnCard');
+function turnCardAll(cardMatch){
+  cardMatch.classList.add('turnCard');
+  contadorJogadas++
   if(!document.querySelector('.primeiraCarta')){
-      diviSelecionada.classList.add('primeiraCarta');
-      primeiraCarta = diviSelecionada;
+      cardMatch.classList.add('primeiraCarta');
+      primeiraCarta = cardMatch;
       primeiraCarta.setAttribute('onclick','')
       console.log(primeiraCarta);
       return false;
   }
-      diviSelecionada.classList.add('segundaCarta');
-      segundaCarta = diviSelecionada;
+      cardMatch.classList.add('segundaCarta');
+      segundaCarta = cardMatch;
       console.log(segundaCarta);
       setTimeout(compararCartas,1000);
       console.log(document.querySelectorAll('.estouComMeuPar').length);
