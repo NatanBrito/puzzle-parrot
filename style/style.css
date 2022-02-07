@@ -19,7 +19,6 @@ header p {
 
 /* tentando fazer a virada de carta*/
 .turnCard {
-    transform: rotateY(180deg);
     transition: all .5s;
     transform: rotateY(180deg);
 }
@@ -44,6 +43,15 @@ header p {
     transform: scale(0.97);
 }
 
+.frontFace {
+    position: absolute;
+    transform: rotateY(180deg);
+    
+}
+
+.backFace {
+    position: absolute;
+}
 nav {
     display: flex;
     justify-content: center;
@@ -60,15 +68,6 @@ nav {
     display: none;
 }
 
-.backFace, .frontFace {
-    position: absolute;
-}
-
-.backFace {
-    transform: rotateY(180deg);
-}
-
-.frontFace {}
 
 @media(max-width:520px) {
     nav {

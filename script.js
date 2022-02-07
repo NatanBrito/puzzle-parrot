@@ -1,4 +1,6 @@
 let numCards;
+let cartasCriadas=[]
+let texteFor;
 let makerCards;
 let versoImg =
   ["<img class='gif' src='imagens/bobrossparrot.gif' alt='papagaio de chapéu'",
@@ -20,16 +22,21 @@ while (numCards % 2 != 0 || numCards > 14 || numCards < 4) {
 }
 // pra gerar a carta
 makerCards = document.querySelector("nav")
-for (let i = 0; i < numCards; i++) {
-  const frontCardHtml = `   <div class="card " onclick=" turnCard(this);" > 
-  <img class=frontFace src="./imagens/parrot.png"/>
-   <div class="backFace">
-   ${versoImg[i]}
-  </div>  
+for (let i = 0; i < (numCards/2); i++) {
+  const frontCardHtml = `   <div data-identifier="card" class="card " onclick=" turnCard(this);" > 
+   
+  <img data-identifier="back-face" class="backFace" src="./imagens/parrot.png"/>
+  <div data-identifier="front-face" class="frontFace">
+  ${versoImg[i]}
+ </div>  
 </div>`
-  makerCards.innerHTML += frontCardHtml
+cartasCriadas.push(frontCardHtml)
+cartasCriadas.push(frontCardHtml)
+cartasCriadas.sort(comparador);
 }
-
+for(let i=0;i<cartasCriadas.length;i++){
+makerCards.innerHTML += cartasCriadas[i];
+}
 const test = document.querySelectorAll(".card")
 test.forEach(card => card.addEventListener('click', turnCard))
 
