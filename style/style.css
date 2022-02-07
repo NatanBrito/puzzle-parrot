@@ -22,6 +22,10 @@ header p {
     transition: all .5s;
     transform: rotateY(180deg);
 }
+.turnCard2{
+    transition: all .5s;
+    transform: rotateY(180deg);
+}
 
 .card {
     width: 117px;
@@ -46,12 +50,13 @@ header p {
 .frontFace {
     position: absolute;
     transform: rotateY(180deg);
-    
+
 }
 
 .backFace {
     position: absolute;
 }
+
 nav {
     display: flex;
     justify-content: center;
