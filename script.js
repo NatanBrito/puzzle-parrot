@@ -1,7 +1,7 @@
-let contadorJogadas = 0;
-let vendoWin = 0;
-let primeiraCarta;
-let segundaCarta;
+let contadorJogadas=0;
+let  vendoWin=0;
+let primeiraCarta ;
+let segundaCarta  ;
 let numCards;
 let cartasCriadas = []
 let firstCard;
@@ -16,13 +16,16 @@ let versoImg =
     "<img class='gif ' src='imagens/tripletsparrot.gif'",
     "<img class='gif ' src='imagens/unicornparrot.gif'",
   ];
+//embaralha as cartas
 versoImg.sort(comparador);
 function comparador() {
   return Math.random() - 0.5;
 }
+
 while (numCards % 2 != 0 || numCards > 14 || numCards < 4) {
   numCards = parseInt(prompt("Qual o número de cartas? Somente número par entre 4 a 14"));
 }
+// pra gerar a carta
 makerCards = document.querySelector("nav")
 for (let i = 0; i < (numCards / 2); i++) {
   const frontCardHtml = `   <div data-identifier="card" class="card "  onclick=" turnCardAll(this);" > 
@@ -41,45 +44,61 @@ for (let i = 0; i < cartasCriadas.length; i++) {
 }
 const test = document.querySelectorAll(".card")
 test.forEach(card => card.addEventListener('click', turnCardAll))
-function turnCardAll(cardMatch) {
+// faz a carta virar e tentando fazer o confirmador de cartas iguais
+
+
+function turnCardAll(cardMatch){
   cardMatch.classList.add('turnCard');
   contadorJogadas++
-  if (!document.querySelector('.primeiraCarta')) {
-    cardMatch.classList.add('primeiraCarta');
-    primeiraCarta = cardMatch;
-    primeiraCarta.setAttribute('onclick', '')
-    console.log(primeiraCarta);
-    return false;
+  if(!document.querySelector('.primeiraCarta')){
+      cardMatch.classList.add('primeiraCarta');
+      primeiraCarta = cardMatch;
+      primeiraCarta.setAttribute('onclick','')
+      console.log(primeiraCarta);
+      return false;
   }
-  cardMatch.classList.add('segundaCarta');
-  segundaCarta = cardMatch;
-  console.log(segundaCarta);
-  setTimeout(compararCartas, 1000);
-  console.log(document.querySelectorAll('.estouComMeuPar').length);
-  console.log(asCartas.length);
+      cardMatch.classList.add('segundaCarta');
+      segundaCarta = cardMatch;
+      console.log(segundaCarta);
+      setTimeout(compararCartas,1000);
+      console.log(document.querySelectorAll('.estouComMeuPar').length);
+      console.log(asCartas.length);
 }
-function compararCartas() {
-  if (primeiraCarta.innerHTML !== segundaCarta.innerHTML) {
-    primeiraCarta.classList.remove('primeiraCarta');
-    primeiraCarta.classList.remove('turnCard');
-    segundaCarta.classList.remove('segundaCarta');
-    segundaCarta.classList.remove('turnCard');
-    primeiraCarta.setAttribute('onclick', 'turnCardAll(this)');
-    segundaCarta.setAttribute('onclick', 'turnCardAll(this)');
+function compararCartas(){
+  if(primeiraCarta.innerHTML !== segundaCarta.innerHTML){
+      primeiraCarta.classList.remove('primeiraCarta');
+      primeiraCarta.classList.remove('turnCard');
+      segundaCarta.classList.remove('segundaCarta');
+      segundaCarta.classList.remove('turnCard');
+      primeiraCarta.setAttribute('onclick','turnCardAll(this)');
+      segundaCarta.setAttribute('onclick','turnCardAll(this)');
   }
-  else {
-    primeiraCarta.classList.remove('primeiraCarta');
-    primeiraCarta.classList.add('estouComMeuPar');
-    primeiraCarta.setAttribute('onclick', '');
-    segundaCarta.classList.remove('segundaCarta');
-    segundaCarta.setAttribute('onclick', '');
-    segundaCarta.classList.add('estouComMeuPar');
-    vendoWin++;
-    chamandoWin();
+  else{
+      primeiraCarta.classList.remove('primeiraCarta');
+      primeiraCarta.classList.add('estouComMeuPar');
+      primeiraCarta.setAttribute('onclick','');
+      segundaCarta.classList.remove('segundaCarta');
+      segundaCarta.setAttribute('onclick','');
+      segundaCarta.classList.add('estouComMeuPar');
+      vendoWin++;
+      chamandoWin();
+    
   }
+} 
+ function chamandoWin(){
+  if(vendoWin === (numCards/2)) {
+  alert("Você ganhou em "+contadorJogadas+ " jogadas!");
+  resetGame();
 }
-function chamandoWin() {
-  if (vendoWin === (numCards / 2)) {
-    alert("Você ganhou em " + contadorJogadas + " jogadas!");
+  function resetGame(){
+  let resposta=prompt("quer jogar de novo?? digite (S)se sim e (N) se não ");
+  if(resposta === "N"){
+  alert("então até o próximo jogo...")
+  }else if(resposta === "S"){
+
+    document.location.reload(true)
+
   }
+
 }
+ }
