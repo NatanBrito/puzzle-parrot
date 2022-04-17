@@ -1,5 +1,10 @@
 # puzzle-parrot
- projeto  de um jogo da memória feito do zero
- feito em Html,css e javaScript.
+## projeto feito
+<ul>
+ <li>HTML></li>
+ <li>CSS</li>
+ <li>JavaScript</li>
+ </ul>
  
- link pra ver a aplicação https://natanbrito.github.io/puzzle-parrot/
+ ## Deploy da plicação
+  https://natanbrito.github.io/puzzle-parrot/
